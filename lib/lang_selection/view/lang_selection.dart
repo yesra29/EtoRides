@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class LangSelection extends StatefulWidget {
   const LangSelection({super.key});
@@ -18,7 +19,7 @@ class _LangSelectionState extends State<LangSelection> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Column(
+              const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
@@ -37,33 +38,56 @@ class _LangSelectionState extends State<LangSelection> {
                   ),
                 ],
               ),
-              Text(
+              const Text(
                 "This number will be used for every communication.",
                 softWrap: true,
                 maxLines: 2,
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Container(
                 decoration: BoxDecoration(
-                    color: Color(0XFF1D9464),
+                    color: const Color(0XFF1D9464),
                     borderRadius: BorderRadius.circular(24.0)),
                 height: 200,
                 width: double.infinity,
-                child: Padding(
-                  padding: const EdgeInsets.all(12.0),
-                  child: Text(
-                    "Use Eto rides as Passenger",
-                    softWrap: true,
-                    maxLines: 2,
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                        fontSize: 26),
-                  ),
+                child: Row(
+                  children: [
+                    const Padding(
+                      padding: EdgeInsets.all(12.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Use Eto rides as",
+                            softWrap: true,
+                            maxLines: 2,
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                                fontSize: 26),
+                          ),
+                          Text(
+                            "Passenger",
+                            softWrap: true,
+                            maxLines: 2,
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                                fontSize: 26),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Icon(
+                      Icons.groups_outlined,
+                      color: Colors.white,
+                      size: 40,
+                    ),
+                  ],
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Container(
                 decoration: BoxDecoration(
                     color: Colors.white,
@@ -71,37 +95,75 @@ class _LangSelectionState extends State<LangSelection> {
                     border: Border.all(color: Colors.black, width: 1)),
                 height: 200,
                 width: double.infinity,
-                child: Padding(
-                  padding: const EdgeInsets.all(12.0),
-                  child: Row(
-                    children: [
-                      Text(
-                        "Join us as eto driver partner",
-                        softWrap: true,
-                        maxLines: 2,
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black,
-                            fontSize: 26),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(top:12.0,left: 12),
+                      child: Column(
+                        children: [
+                          Text(
+                            "Join us as eto",
+                            style: TextStyle(color: Colors.black, fontSize: 24,fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            "driver partner",
+                            style: TextStyle(color: Colors.black, fontSize: 24,fontWeight: FontWeight.bold),
+                          ),
+                        ],
                       ),
-                      Icon(Icons.people),
-                    ],
-                  ),
+                    ),
+
+                    SizedBox(
+                      width: 90,
+                    ),
+
+                    Padding(
+                      padding: const EdgeInsets.only(top:20.0),
+                      child: FaIcon(FontAwesomeIcons.carSide,size: 40,),
+                    )
+                  ],
                 ),
               ),
-              SizedBox(height: 40),
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(40.0),
-                  color: Colors.black,
-                ),
-                height: 70,
-                width: double.infinity,
-                child: Text(
-                  "Continue",
-                  style: TextStyle(color: Colors.white,fontSize: 18,fontWeight: FontWeight.w400),
-                ),
-              )
+              const SizedBox(height: 50),
+              Column(
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(40.0),
+                      color: Colors.black,
+                    ),
+                    height: 70,
+                    width: double.infinity,
+                    alignment: Alignment.center,
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        const Text(
+                          "Continue",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w400),
+                        ),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        Icon(
+                          Icons.arrow_outward,
+                          color: Colors.white,
+                          size: 24,
+                        ),
+                      ],
+                    ),
+
+                    // Icon(
+                    //   Icons.arrow_forward,
+                    //   color: Colors.white,
+                    // )
+                  ),
+                ],
+              ),
             ],
           ),
         )));
