@@ -13,28 +13,47 @@ class _LangSelectionPageState extends State<LangSelectionPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
-        body: SafeArea(
-            child: Padding(
-                padding: const EdgeInsets.only(top: 40.0, left: 30.0),
-                child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      _buildHeader(),
-                      const SizedBox(height: 10),
-                      const Text(
-                        "Get prompt and reliable assistance anytime with our comprehensive town-wide service",
-                        softWrap: true,
-                        maxLines: 2,
-                        style: TextStyle(fontWeight: FontWeight.w400),
-                      ),
-                      const SizedBox(height: 20),
-                      _langContainer(
-                        image: const Image(image: AssetImage(AssetPath.translate)),
-                        title: "English",
-                      ),
-                    ]))));
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.only(top: 40.0, left: 20.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              _buildHeader(),
+              const SizedBox(height: 10),
+              const Text(
+                "Get prompt and reliable assistance anytime with our comprehensive town-wide service",
+                softWrap: true,
+                maxLines: 2,
+                style: TextStyle(fontWeight: FontWeight.w400),
+              ),
+              const SizedBox(height: 20),
+              Row(
+                children: [
+                  _langContainer(
+                    image: Image(image: AssetImage(AssetPath.translate),height: 50,),
+                    title: "English",
+                  ),
+                  const SizedBox(width: 20),
+                  _langContainer(
+                    image: Image(image: AssetImage(AssetPath.hindi_icon),height: 50,),
+                    title: "Hindi", // Changed to differentiate
+                  ),
+                ],
+              ),
+              const SizedBox(height: 40),
+              _langContainer(
+                image: Image(image: AssetImage(AssetPath.bengali_icon),height: 50,),
+                title: "Hindi", // Changed to differentiate
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
+
 
   Widget _buildHeader() {
     return Row(
@@ -61,7 +80,7 @@ class _LangSelectionPageState extends State<LangSelectionPage> {
           ],
         ),
         const Spacer(),
-        const Image(image: AssetImage(AssetPath.translate))
+        Image(image: AssetImage(AssetPath.translate)), // Removed `const`
       ],
     );
   }
@@ -71,7 +90,8 @@ class _LangSelectionPageState extends State<LangSelectionPage> {
     required String title,
   }) {
     return Container(
-      width: 150,
+      width: 180,
+      height: 120,
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
         border: Border.all(color: Colors.black, width: 1),

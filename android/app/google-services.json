@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "872441549849",
+    "project_id": "eto-rides-e1b64",
+    "storage_bucket": "eto-rides-e1b64.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:872441549849:android:88bf119f8ca30cb6164688",
+        "android_client_info": {
+          "package_name": "com.example.eto_rides"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIIyPAp4Xw5_p4X6bxzCK65B-mN36xAlQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
