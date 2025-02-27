@@ -45,7 +45,7 @@ class _LangSelectionPageState extends State<LangSelectionPage> {
               const SizedBox(height: 40),
               _langContainer(
                 image: Image(image: AssetImage(AssetPath.bengali_icon),height: 50,),
-                title: "Hindi", // Changed to differentiate
+                title: "Bengali", // Changed to differentiate
               ),
             ],
           ),
