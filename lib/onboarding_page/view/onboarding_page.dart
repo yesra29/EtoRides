@@ -51,7 +51,7 @@ class _LangSelectionState extends State<OnboardingPage> {
           ),
         ),
       ),
-    );
+      );
   }
 
   /// **Header Section**
@@ -90,7 +90,7 @@ class _LangSelectionState extends State<OnboardingPage> {
       ),
       height: 200,
       width: double.infinity,
-      padding: const EdgeInsets.all(12.0),
+      padding: const EdgeInsets.all(16.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

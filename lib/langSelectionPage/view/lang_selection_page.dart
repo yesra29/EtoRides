@@ -16,7 +16,7 @@ class _LangSelectionPageState extends State<LangSelectionPage> {
       backgroundColor: Colors.white,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.only(top: 40.0, left: 20.0),
+          padding: const EdgeInsets.all(15.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -30,23 +30,32 @@ class _LangSelectionPageState extends State<LangSelectionPage> {
               ),
               const SizedBox(height: 20),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   _langContainer(
-                    image: Image(image: AssetImage(AssetPath.translate),height: 50,),
+                    image: const Image(image: AssetImage(AssetPath.translate),height: 50,),
                     title: "English",
                   ),
-                  const SizedBox(width: 20),
                   _langContainer(
-                    image: Image(image: AssetImage(AssetPath.hindi_icon),height: 50,),
+                    image: const Image(image: AssetImage(AssetPath.hindi_icon),height: 50,),
                     title: "Hindi", // Changed to differentiate
                   ),
                 ],
               ),
-              const SizedBox(height: 40),
-              _langContainer(
-                image: Image(image: AssetImage(AssetPath.bengali_icon),height: 50,),
-                title: "Bengali", // Changed to differentiate
-              ),
+             const SizedBox(height: 10),
+             Row(
+               mainAxisAlignment: MainAxisAlignment.spaceAround,
+               children: [
+                 _langContainer(
+                   image: const Image(image: AssetImage(AssetPath.bengali_icon),height: 50,),
+                   title: "Bengali", // Changed to differentiate
+                 ),
+                 _langContainer(
+                   border: Border.all(color: Colors.transparent
+                   ),
+                 ),
+               ],
+             )
             ],
           ),
         ),
@@ -80,30 +89,31 @@ class _LangSelectionPageState extends State<LangSelectionPage> {
           ],
         ),
         const Spacer(),
-        Image(image: AssetImage(AssetPath.translate)), // Removed `const`
+        const Image(image: AssetImage(AssetPath.translate)), // Removed `const`
       ],
     );
   }
 
   Widget _langContainer({
-    required Image image,
-    required String title,
+     Image? image,
+     String? title,
+     Border? border,
   }) {
     return Container(
       width: 180,
       height: 120,
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        border: Border.all(color: Colors.black, width: 1),
+        border: border ?? Border.all(color: Colors.black, width: 1),
         borderRadius: BorderRadius.circular(10),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          image,
+          image??
           const SizedBox(height: 10),
           Text(
-            title,
+            title?? "",
             style: GoogleFonts.montserrat(
               fontSize: 18,
               fontWeight: FontWeight.w500,
