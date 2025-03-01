@@ -1,3 +1,4 @@
+import 'package:eto_rides/onboarding_screens/view/onboarding_screen1.dart';
 import 'package:eto_rides/utils/assets_path.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -33,7 +34,7 @@ class _LangSelectionPageState extends State<LangSelectionPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   _langContainer(
-                    image: const Image(image: AssetImage(AssetPath.translate),height: 50,),
+                    image: const Image(image: AssetImage(AssetPath.translate),height: 20,),
                     title: "English",
                   ),
                   _langContainer(
@@ -53,9 +54,15 @@ class _LangSelectionPageState extends State<LangSelectionPage> {
                  _langContainer(
                    border: Border.all(color: Colors.transparent
                    ),
+
                  ),
+
                ],
-             )
+             ),
+              const SizedBox(
+                height: 20,
+              ),
+              _buildContinueButton(context),
             ],
           ),
         ),
@@ -89,7 +96,7 @@ class _LangSelectionPageState extends State<LangSelectionPage> {
           ],
         ),
         const Spacer(),
-        const Image(image: AssetImage(AssetPath.translate)), // Removed `const`
+        const Image(image: AssetImage(AssetPath.translate),height: 50,), // Removed `const`
       ],
     );
   }
@@ -123,4 +130,34 @@ class _LangSelectionPageState extends State<LangSelectionPage> {
       ),
     );
   }
+}
+
+Widget _buildContinueButton(BuildContext context) {
+  return GestureDetector(
+    onTap: () {
+      Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const StartScreen1()),
+      );
+    },
+    child: Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(40.0),
+        color: Colors.black,
+      ),
+      height: 70,
+      width: double.infinity,
+      alignment: Alignment.center,
+      child: const Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text(
+            "Continue",
+            style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.w400),
+          ),
+          SizedBox(width: 5),
+          Icon(Icons.arrow_outward, color: Colors.white, size: 24),
+        ],
+      ),
+    ),
+  );
 }

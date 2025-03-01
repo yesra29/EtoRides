@@ -1,14 +1,15 @@
 import 'package:eto_rides/langSelectionPage/view/lang_selection_page.dart';
+import 'package:eto_rides/utils/assets_path.dart';
 import 'package:flutter/material.dart';
 
-class OnboardingPage extends StatefulWidget {
-  const OnboardingPage({super.key});
+class UserTypeSelectionScreen extends StatefulWidget {
+  const UserTypeSelectionScreen({super.key});
 
   @override
-  State<OnboardingPage> createState() => _LangSelectionState();
+  State<UserTypeSelectionScreen> createState() => _UserTypeSelectionScreenState();
 }
 
-class _LangSelectionState extends State<OnboardingPage> {
+class _UserTypeSelectionScreenState extends State<UserTypeSelectionScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,18 +32,17 @@ class _LangSelectionState extends State<OnboardingPage> {
               _buildOptionCard(
                 title: "Use Eto rides as",
                 subtitle: "Passenger",
-                icon: Icons.groups,
                 color: const Color(0xFF1D9464),
                 textColor: Colors.white,
-                border: null,
+                image: Image.asset(AssetPath.customer_icon,height: 40,),
               ),
               const SizedBox(height: 20),
               _buildOptionCard(
                 title: "Join us as eto",
                 subtitle: "driver partner",
-                icon: Icons.person,
                 color: Colors.white,
                 textColor: Colors.black,
+                image: Image.asset(AssetPath.driver_icon,height: 40,),
                 border: Border.all(color: Colors.black, width: 1),
               ),
               const SizedBox(height: 50),
@@ -51,7 +51,7 @@ class _LangSelectionState extends State<OnboardingPage> {
           ),
         ),
       ),
-      );
+    );
   }
 
   /// **Header Section**
@@ -77,9 +77,9 @@ class _LangSelectionState extends State<OnboardingPage> {
   Widget _buildOptionCard({
     required String title,
     required String subtitle,
-    required IconData icon,
     required Color color,
     required Color textColor,
+    required Image image,
     Border? border,
   }) {
     return Container(
@@ -118,7 +118,7 @@ class _LangSelectionState extends State<OnboardingPage> {
               const Spacer(),
               Padding(
                 padding: const EdgeInsets.only(top: 20.0),
-                child: Icon(icon, size: 60, color: textColor),
+                child: image, // ✅ Fixed incorrect Image usage
               ),
             ],
           ),
