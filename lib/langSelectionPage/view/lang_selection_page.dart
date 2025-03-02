@@ -1,4 +1,4 @@
-import 'package:eto_rides/onboarding_screens/view/onboarding_screen1.dart';
+import 'package:eto_rides/onboarding_screen/view/onboarding_screen.dart';
 import 'package:eto_rides/utils/assets_path.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -34,31 +34,37 @@ class _LangSelectionPageState extends State<LangSelectionPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   _langContainer(
-                    image: const Image(image: AssetImage(AssetPath.translate),height: 20,),
+                    image: const Image(
+                      image: AssetImage(AssetPath.translate),
+                      height: 20,
+                    ),
                     title: "English",
                   ),
                   _langContainer(
-                    image: const Image(image: AssetImage(AssetPath.hindi_icon),height: 50,),
+                    image: const Image(
+                      image: AssetImage(AssetPath.hindi_icon),
+                      height: 50,
+                    ),
                     title: "Hindi", // Changed to differentiate
                   ),
                 ],
               ),
-             const SizedBox(height: 10),
-             Row(
-               mainAxisAlignment: MainAxisAlignment.spaceAround,
-               children: [
-                 _langContainer(
-                   image: const Image(image: AssetImage(AssetPath.bengali_icon),height: 50,),
-                   title: "Bengali", // Changed to differentiate
-                 ),
-                 _langContainer(
-                   border: Border.all(color: Colors.transparent
-                   ),
-
-                 ),
-
-               ],
-             ),
+              const SizedBox(height: 10),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  _langContainer(
+                    image: const Image(
+                      image: AssetImage(AssetPath.bengali_icon),
+                      height: 50,
+                    ),
+                    title: "Bengali", // Changed to differentiate
+                  ),
+                  _langContainer(
+                    border: Border.all(color: Colors.transparent),
+                  ),
+                ],
+              ),
               const SizedBox(
                 height: 20,
               ),
@@ -69,7 +75,6 @@ class _LangSelectionPageState extends State<LangSelectionPage> {
       ),
     );
   }
-
 
   Widget _buildHeader() {
     return Row(
@@ -96,15 +101,18 @@ class _LangSelectionPageState extends State<LangSelectionPage> {
           ],
         ),
         const Spacer(),
-        const Image(image: AssetImage(AssetPath.translate),height: 50,), // Removed `const`
+        const Image(
+          image: AssetImage(AssetPath.translate),
+          height: 50,
+        ), // Removed `const`
       ],
     );
   }
 
   Widget _langContainer({
-     Image? image,
-     String? title,
-     Border? border,
+    Image? image,
+    String? title,
+    Border? border,
   }) {
     return Container(
       width: 180,
@@ -117,10 +125,9 @@ class _LangSelectionPageState extends State<LangSelectionPage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          image??
-          const SizedBox(height: 10),
+          image ?? const SizedBox(height: 10),
           Text(
-            title?? "",
+            title ?? "",
             style: GoogleFonts.montserrat(
               fontSize: 18,
               fontWeight: FontWeight.w500,
@@ -136,7 +143,8 @@ Widget _buildContinueButton(BuildContext context) {
   return GestureDetector(
     onTap: () {
       Navigator.push(
-        context, MaterialPageRoute(builder: (context) => const StartScreen1()),
+        context,
+        MaterialPageRoute(builder: (context) => OnboardingScreen()),
       );
     },
     child: Container(
@@ -152,7 +160,8 @@ Widget _buildContinueButton(BuildContext context) {
         children: [
           Text(
             "Continue",
-            style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.w400),
+            style: TextStyle(
+                color: Colors.white, fontSize: 18, fontWeight: FontWeight.w400),
           ),
           SizedBox(width: 5),
           Icon(Icons.arrow_outward, color: Colors.white, size: 24),

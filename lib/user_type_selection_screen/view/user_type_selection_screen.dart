@@ -6,7 +6,8 @@ class UserTypeSelectionScreen extends StatefulWidget {
   const UserTypeSelectionScreen({super.key});
 
   @override
-  State<UserTypeSelectionScreen> createState() => _UserTypeSelectionScreenState();
+  State<UserTypeSelectionScreen> createState() =>
+      _UserTypeSelectionScreenState();
 }
 
 class _UserTypeSelectionScreenState extends State<UserTypeSelectionScreen> {
@@ -34,7 +35,10 @@ class _UserTypeSelectionScreenState extends State<UserTypeSelectionScreen> {
                 subtitle: "Passenger",
                 color: const Color(0xFF1D9464),
                 textColor: Colors.white,
-                image: Image.asset(AssetPath.customer_icon,height: 40,),
+                image: Image.asset(
+                  AssetPath.customer_icon,
+                  height: 40,
+                ),
               ),
               const SizedBox(height: 20),
               _buildOptionCard(
@@ -42,7 +46,10 @@ class _UserTypeSelectionScreenState extends State<UserTypeSelectionScreen> {
                 subtitle: "driver partner",
                 color: Colors.white,
                 textColor: Colors.black,
-                image: Image.asset(AssetPath.driver_icon,height: 40,),
+                image: Image.asset(
+                  AssetPath.driver_icon,
+                  height: 40,
+                ),
                 border: Border.all(color: Colors.black, width: 1),
               ),
               const SizedBox(height: 50),
@@ -125,11 +132,13 @@ class _UserTypeSelectionScreenState extends State<UserTypeSelectionScreen> {
           const SizedBox(height: 12),
           Text(
             "This number will be used for",
-            style: TextStyle(color: textColor, fontSize: 14, fontWeight: FontWeight.w300),
+            style: TextStyle(
+                color: textColor, fontSize: 14, fontWeight: FontWeight.w300),
           ),
           Text(
             "every communication",
-            style: TextStyle(color: textColor, fontSize: 14, fontWeight: FontWeight.w300),
+            style: TextStyle(
+                color: textColor, fontSize: 14, fontWeight: FontWeight.w300),
           ),
         ],
       ),
@@ -141,7 +150,8 @@ class _UserTypeSelectionScreenState extends State<UserTypeSelectionScreen> {
     return GestureDetector(
       onTap: () {
         Navigator.push(
-          context, MaterialPageRoute(builder: (context) => const LangSelectionPage()),
+          context,
+          MaterialPageRoute(builder: (context) => const LangSelectionPage()),
         );
       },
       child: Container(
@@ -157,7 +167,10 @@ class _UserTypeSelectionScreenState extends State<UserTypeSelectionScreen> {
           children: [
             Text(
               "Continue",
-              style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.w400),
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w400),
             ),
             SizedBox(width: 5),
             Icon(Icons.arrow_outward, color: Colors.white, size: 24),
