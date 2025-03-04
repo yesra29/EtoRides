@@ -75,17 +75,17 @@ class _LoginPage1State extends State<LoginPage1> {
                 ),
                 Text.rich(
                   TextSpan(
-                    text: 'I have read and agreed to the ', // Normal text
+                    text: 'I have read and agreed to the ',
                     style:
                         GoogleFonts.baloo2(fontSize: 16, color: Colors.black),
-                    children: const [
+                    children: [
                       TextSpan(
                         text:
                             'Terms and\nConditions', // Green-colored text with a new line
-                        style: TextStyle(
+                        style: GoogleFonts.baloo2(
                             color: Colors.green,
                             decoration: TextDecoration.underline,
-                            decorationColor: Color(0xFF1D9464)),
+                            decorationColor: const Color(0xFF1D9464)),
                       ),
                     ],
                   ),
