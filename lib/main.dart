@@ -1,6 +1,5 @@
 import 'package:eto_rides/firebase_options.dart';
-import 'package:eto_rides/loginPages/view/login_page1.dart';
-import 'package:eto_rides/loginPages/view/otp_verification_page.dart';
+import 'package:eto_rides/loginPages/view/user_detail_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
@@ -24,7 +23,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
         useMaterial3: true,
       ),
-      home: const OtpVerificationPage(),
+      home: const UserDetailPage(),
     );
   }
 }
